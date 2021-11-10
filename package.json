@@ -1,0 +1,21 @@
+{
+  "name": "kurt's base node template",
+  "version": "1.0.0",
+  "description": "JW API Scripts",
+  "main": "server",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/node": "^7.14.7",
+    "@babel/preset-env": "^7.14.7"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node config/server"
+  },
+  "author": "kurt bauer",
+  "license": "ISC"
+}
