@@ -3,20 +3,24 @@
   "version": "1.0.0",
   "description": "JW API Scripts",
   "main": "server",
-  "type": "module",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.12",
+    "webpack-node-externals": "^3.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.6",
+    "@babel/core": "^7.16.0",
     "@babel/node": "^7.14.7",
-    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-env": "^7.16.0",
+    "babel-loader": "^8.2.3",
     "html-loader": "^3.0.1",
-    "html-webpack-plugin": "^5.5.0"
+    "html-webpack-plugin": "^5.5.0",
+    "webpack-cli": "^4.9.1"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node config/server"
+    "build": "rm -rf dist && webpack --mode development",
+    "start": "node config/server"
   },
   "author": "kurt bauer",
   "license": "ISC"
