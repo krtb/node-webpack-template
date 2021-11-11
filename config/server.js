@@ -1,18 +1,18 @@
-import express from 'express';
-// https://stackoverflow.com/questions/64383909/dirname-is-not-defined-in-node-14-version
-import { fileURLToPath } from 'url';
-import path, {dirname} from 'path';
+const express = require('express');
+const path = require('path')
+const https = require('https');
 const app = express();
+const dotenv = require('dotenv');
+dotenv.config(); 
 // server port number
 const PORT = 3000;
 
-// support serving static files. https://expressjs.com/en/starter/static-files.html
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+// allows for support of static files, like images/CSS/svg/etc.
+// info on configuration can be found here => https://expressjs.com/en/starter/static-files.html
 app.use('/static', express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
-app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
+app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`, '\n'));
