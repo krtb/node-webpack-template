@@ -1,0 +1,18 @@
+h1, h2, h3, h4, h5, p {
+  font-family: "helvetica";
+  color: #3e3e3e;
+}
+.description {
+  font-size: 14px;
+  color: #9e9e9e;
+}
+.awful-selfie {
+  background-image: url("../images/marioTada.png");
+  background-size: cover;
+  background-position: center top;
+  background-color: green;
+  width: 100%;
+  height: 400px;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
