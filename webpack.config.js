@@ -8,11 +8,23 @@ if(process.env.NODE_ENV === 'production'){
     // if in production, use browserslistrc as target. Otherwise, web.
     target = 'browserslist';
 }
-
+// "npx tsc --init" => create typescript file
 module.exports = {
     mode: 'development',
+    resolve: {
+        extensions: [
+            '.ts', '.js'
+        ]
+    },
     module: {
         rules: [
+            {
+                test: /\.ts$/i,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'ts-loader'
+                }
+            },
             {
                 test: /\.(s[ac]|c)ss$/i,
                 // last loader in list is first used
@@ -39,7 +51,7 @@ module.exports = {
 
     // Normalizes webpack output file, "main.js", for inspection
     // devtool: false,
-    devtool: 'source-map',
+    devtool: false,
     devServer: {
         // In new Webpack Version, no longer "contentBase" config.
         // Needs relative path
